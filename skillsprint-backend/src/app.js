@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
-const cors = require('cors'); // You already have this
+const cors = require('cors'); 
 
 const { sequelize } = require('./api/models'); 
 const authRoutes = require('./api/routes/authRoutes');
@@ -9,16 +9,12 @@ const goalRoutes = require('./api/routes/goalRoutes');
 
 const app = express();
 
-// --- THIS IS THE CRITICAL CHANGE ---
-// Configure CORS to allow requests only from your live Vercel frontend
+
 const corsOptions = {
-  origin: 'https://skill-sprint-gilt.vercel.app/', 
-  optionsSuccessStatus: 200 // For legacy browser support
+  origin: 'https://skill-sprint-gilt.vercel.app', 
+  optionsSuccessStatus: 200 
 };
 app.use(cors(corsOptions));
-// ------------------------------------
-
-// The rest of the middleware
 app.use(express.json());
 
 // API Routes
