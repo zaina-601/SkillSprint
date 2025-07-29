@@ -1,0 +1,92 @@
+.goal-card {
+  background: var(--surface-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.goal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.goal-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.goal-card-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-right: 16px;
+}
+
+.goal-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.action-button:hover {
+  background-color: var(--background-color);
+}
+
+.edit-button { color: var(--text-light); }
+.edit-button:hover { color: var(--primary-color); }
+
+.delete-button { color: var(--text-light); }
+.delete-button:hover { color: var(--error-color); }
+
+.goal-card-description {
+  color: var(--text-light);
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  flex-grow: 1; /* Allows card to grow in height */
+}
+
+.goal-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.goal-card-date {
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.goal-card-status {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--surface-color);
+}
+
+.status-not-started { background-color: #757575; }
+.status-in-progress { background-color: var(--secondary-color); }
+.status-completed { background-color: var(--primary-color); }

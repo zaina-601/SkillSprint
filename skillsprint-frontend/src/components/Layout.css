@@ -1,0 +1,11 @@
+.layout-container {
+  display: flex;
+}
+
+.main-content-area {
+  flex-grow: 1;
+  margin-left: 260px; /* Same as sidebar width */
+  padding: 32px;
+  height: 100vh;
+  overflow-y: auto;
+}
