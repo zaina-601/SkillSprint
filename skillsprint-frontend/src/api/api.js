@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-// This uses the environment variable from Vercel, but falls back to localhost for local development
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api';
 
 const api = axios.create({

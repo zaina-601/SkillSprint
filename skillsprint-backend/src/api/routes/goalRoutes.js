@@ -3,7 +3,7 @@ const router = express.Router();
 const goalController = require('../controllers/goalController');
 const authMiddleware = require('../middlewares/authMiddleware');
 
-router.use(authMiddleware); // Protect all routes in this file
+router.use(authMiddleware); 
 
 router.post('/', goalController.createGoal);
 router.get('/', goalController.getGoals);

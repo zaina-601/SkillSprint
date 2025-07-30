@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import Spinner from '../components/Spinner';
-import './LoginPage.css'; // We are correctly re-using the CSS
+import './LoginPage.css'; 
 
 const RegisterPage = () => {
   const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', password: '' });
@@ -27,7 +27,6 @@ const RegisterPage = () => {
     }
   };
 
-  // --- This is the updated JSX structure ---
   return (
     <div className="auth-container-split">
       <div className="auth-panel-left">

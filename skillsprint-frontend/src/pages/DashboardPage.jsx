@@ -11,10 +11,8 @@ const DashboardPage = ({ title = 'Dashboard' }) => {
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
   
-  // State to determine if the modal is for editing or creating
   const [isEditMode, setIsEditMode] = useState(false);
   
-  // A single state to hold the form data for either creating or editing
   const [formData, setFormData] = useState({
     id: null,
     title: '',
@@ -41,17 +39,14 @@ const DashboardPage = ({ title = 'Dashboard' }) => {
     }
   };
 
-  // --- Handlers for Modal and Forms ---
-
   const handleOpenCreateModal = () => {
-    setIsEditMode(false); // Set to create mode
-    setFormData(emptyForm); // Use an empty form
+    setIsEditMode(false); 
+    setFormData(emptyForm); 
     setShowModal(true);
   };
 
   const handleOpenEditModal = (goal) => {
-    setIsEditMode(true); // Set to edit mode
-    // Pre-fill the form with the goal's data, formatting dates correctly
+    setIsEditMode(true); 
     setFormData({
       ...goal,
       startDate: new Date(goal.startDate).toISOString().split('T')[0],
@@ -72,14 +67,12 @@ const DashboardPage = ({ title = 'Dashboard' }) => {
     e.preventDefault();
     try {
       if (isEditMode) {
-        // If editing, call the update service
         await GoalService.updateGoal(formData.id, formData);
       } else {
-        // If creating, call the create service
         await GoalService.createGoal(formData);
       }
       handleCloseModal();
-      fetchGoals(); // Refresh the list of goals to show changes
+      fetchGoals(); 
     } catch (error) {
       console.error("Failed to save goal:", error);
     }
@@ -89,7 +82,7 @@ const DashboardPage = ({ title = 'Dashboard' }) => {
     if (window.confirm('Are you sure you want to delete this goal?')) {
       try {
         await GoalService.deleteGoal(id);
-        fetchGoals(); // Refresh the list
+        fetchGoals(); 
       } catch (error) {
         console.error("Failed to delete goal:", error);
       }
@@ -116,7 +109,7 @@ const DashboardPage = ({ title = 'Dashboard' }) => {
             <GoalCard 
               key={goal.id} 
               goal={goal} 
-              onEdit={handleOpenEditModal} // Pass the handler to the card
+              onEdit={handleOpenEditModal}
               onDelete={handleDelete} 
             />
           ))

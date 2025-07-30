@@ -59,7 +59,7 @@
   color: var(--text-light);
   margin-bottom: 16px;
   font-size: 0.95rem;
-  flex-grow: 1; /* Allows card to grow in height */
+  flex-grow: 1; 
 }
 
 .goal-card-footer {

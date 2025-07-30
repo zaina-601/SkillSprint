@@ -14,13 +14,11 @@ return (
   <Route path="/register" element={user ? <Navigate to="/dashboard" /> : <RegisterPage />} />
   
   <Route element={<ProtectedRoute />}>
-    {/* For the "/dashboard" URL, pass the title "Dashboard" */}
     <Route 
       path="/dashboard" 
       element={<DashboardPage title="Dashboard" />} 
     />
     
-    {/* For the "/goals" URL, pass the title "All Goals" */}
     <Route 
       path="/goals" 
       element={<DashboardPage title="All Goals" />} 
