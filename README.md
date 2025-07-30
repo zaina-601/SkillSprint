@@ -74,58 +74,67 @@ cd your-repo-name
 
 ### 2. Set Up The Backend
 
-1.  Navigate into the backend project:
-    ```bash
-    cd skillsprint-backend
-    ```
-2.  Install all required packages:
-    ```bash
-    npm install
-    ```
-3.  Create your local environment file. In the `skillsprint-backend` folder, create a file named `.env`.
-4.  Paste the following into this new file, replacing the placeholder values with your local PostgreSQL credentials. **(This file is in `.gitignore` to protect your keys!)**
-    ```dotenv
-    PORT=3000
+1. Navigate into the backend project:
 
-    DB_HOST=localhost
-    DB_USER=your_postgres_user
-    DB_PASSWORD=your_postgres_password
-    DB_NAME=skillsprint_dev
+   ```bash
+   cd skillsprint-backend
+   ```
+2. Install all required packages:
 
-    JWT_SECRET=generate_a_strong_random_secret_for_local_use
-    ```
-5.  Make sure your PostgreSQL server is running and you have created a database named `skillsprint_dev`.
-6.  Run the database migrations to create all necessary tables:
-    ```bash
-    npx sequelize-cli db:migrate
-    ```
+   ```bash
+   npm install
+   ```
+3. Create your local environment file. In the `skillsprint-backend` folder, create a file named `.env`.
+4. Paste the following into this new file, replacing the placeholder values with your local PostgreSQL credentials. **(This file is in `.gitignore` to protect your keys!)**
+
+   ```dotenv
+   PORT=3000
+
+   DB_HOST=localhost
+   DB_USER=your_postgres_user
+   DB_PASSWORD=your_postgres_password
+   DB_NAME=skillsprint_dev
+
+   JWT_SECRET=generate_a_strong_random_secret_for_local_use
+   ```
+5. Make sure your PostgreSQL server is running and you have created a database named `skillsprint_dev`.
+6. Run the database migrations to create all necessary tables:
+
+   ```bash
+   npx sequelize-cli db:migrate
+   ```
 
 ### 3. Set Up The Frontend
 
-1.  From the root directory, navigate into the frontend project:
-    ```bash
-    cd ../skillsprint-frontend
-    ```
-2.  Install all required packages:
-    ```bash
-    npm install
-    ```
+1. From the root directory, navigate into the frontend project:
+
+   ```bash
+   cd ../skillsprint-frontend
+   ```
+2. Install all required packages:
+
+   ```bash
+   npm install
+   ```
 
 ### 4. Run the Application
 
 You will need two separate terminals to run both the backend and frontend servers simultaneously.
 
-*   **Terminal 1 (Backend):**
-    ```bash
-    cd skillsprint-backend
-    npm run dev
-    ```
+* **Terminal 1 (Backend):**
 
-*   **Terminal 2 (Frontend):**
-    ```bash
-    cd skillsprint-frontend
-    npm run dev
-    ```
+  ```bash
+  cd skillsprint-backend
+  npm run dev
+  ```
+
+* **Terminal 2 (Frontend):**
+
+  ```bash
+  cd skillsprint-frontend
+  npm run dev
+  ```
+
 Open `http://localhost:5173` (or whatever port is shown) in your browser.
 
 ---
@@ -134,17 +143,17 @@ Open `http://localhost:5173` (or whatever port is shown) in your browser.
 
 This project was an excellent exercise in building a full-stack application from scratch, covering everything from database design to production deployment. Key takeaways include:
 
-*   **Monorepo Management:** Structuring and managing a full-stack application within a single Git repository.
-*   **Secure API Design:** Implementing JWT authentication and protected routes with custom middleware.
-*   **Database Schema & Migrations:** Using Sequelize to define models and manage database schema evolution safely.
-*   **Modern Deployment Pipelines:** Configuring and deploying separate frontend and backend services on Vercel and Railway, and troubleshooting real-world CORS and environment issues.
+* **Monorepo Management:** Structuring and managing a full-stack application within a single Git repository.
+* **Secure API Design:** Implementing JWT authentication and protected routes with custom middleware.
+* **Database Schema & Migrations:** Using Sequelize to define models and manage database schema evolution safely.
+* **Modern Deployment Pipelines:** Configuring and deploying separate frontend and backend services on Vercel and Railway, and troubleshooting real-world CORS and environment issues.
 
 ### Future Ideas:
 
-*   [ ] **Task Management:** Implement full CRUD functionality for sub-tasks within each goal.
-*   [ ] **Daily Progress Logging:** Add a feature to log daily notes and hours spent on each goal.
-*   [ ] **AI-Powered Suggestions:** Integrate an AI service to provide weekly feedback based on user activity.
-*   [ ] **Advanced Data Visualization:** Add more charts to the dashboard to show progress over time.
+* [ ] **Task Management:** Implement full CRUD functionality for sub-tasks within each goal.
+* [ ] **Daily Progress Logging:** Add a feature to log daily notes and hours spent on each goal.
+* [ ] **AI-Powered Suggestions:** Integrate an AI service to provide weekly feedback based on user activity.
+* [ ] **Advanced Data Visualization:** Add more charts to the dashboard to show progress over time.
 
 ---
 
@@ -152,6 +161,4 @@ This project was an excellent exercise in building a full-stack application from
 
 **Zainab Malik**
 
-*   GitHub: [@zaina-601](https://github.com/zaina-601/SkillSprint)
-
-```
+* GitHub: [@zaina-601](https://github.com/zaina-601/SkillSprint)
