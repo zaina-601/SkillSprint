@@ -46,9 +46,9 @@ This project leverages a modern and powerful set of tools to deliver a high-qual
 |:-----:|:------:|
 | ![Login Screen](screenshots/login.png) | ![Signup Screen](screenshots/signup.png) |
 
-| Dashboard | Preview Goal |
+| Dashboard | Preview Goals |
 |:---------:|:------------:|
-| ![Dashboard Screen](screenshots/dashboard.png) | ![Preview Goal Screen](screenshots/preview_goals.png) |
+| ![Dashboard Screen](screenshots/dashboard.png) | ![Preview Goals Screen](screenshots/preview_goals.png) |
 
 | Create Goal | Edit Goal |
 |:-----------:|:---------:|
