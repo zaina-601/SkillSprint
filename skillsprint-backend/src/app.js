@@ -2,10 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const { ApolloServer } = require('@apollo/server');
-
-// --- THIS IS THE FINAL, CORRECT IMPORT ---
 const { expressMiddleware } = require('@apollo/server/express4');
-// ------------------------------------------
 
 const { sequelize } = require('./api/models');
 const typeDefs = require('./graphql/schema');
@@ -27,9 +24,7 @@ async function startServer() {
 
   const apiRouter = express.Router();
   
-  // The middleware function needs to be passed to the router
   apiRouter.use('/graphql', expressMiddleware(server));
-
   apiRouter.use('/auth', authRoutes);
   apiRouter.use('/goals', goalRoutes);
   app.use('/api', apiRouter);
