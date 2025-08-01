@@ -1,8 +1,8 @@
 {
-  "name": "skillsprint",
+  "name": "skillsprint-backend",
   "version": "1.0.0",
-  "main": "index.js",
-  
+  "description": "The backend API for the SkillSprint application.",
+  "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
@@ -14,21 +14,20 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "@apollo/server": "^5.0.0",
-    "bcryptjs": "^3.0.2",
+    "@apollo/server": "^4.10.2",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "dotenv": "^17.2.1",
-    "express": "^5.1.0",
-    "graphql": "^16.11.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "graphql": "^16.8.1",
     "jsonwebtoken": "^9.0.2",
-    "pg": "^8.16.3",
+    "pg": "^8.11.5",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.37.7"
+    "sequelize": "^6.37.3"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10",
-    "sequelize-cli": "^6.6.3"
+    "nodemon": "^3.1.1",
+    "sequelize-cli": "^6.6.2"
   }
 }
