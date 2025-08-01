@@ -1,5 +1,5 @@
 {
-  "name": "skillsprint-backend",
+  "name": "skillsprint",
   "version": "1.0.0",
   "description": "The backend API for the SkillSprint application.",
   "main": "src/app.js",
