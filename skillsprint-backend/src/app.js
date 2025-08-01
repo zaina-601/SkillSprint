@@ -22,20 +22,14 @@ async function startServer() {
   app.use(cors(corsOptions));
   app.use(express.json());
 
-  // --- THIS IS THE CRITICAL CHANGE ---
-  // We create a new router for all /api endpoints
   const apiRouter = express.Router();
   
-  // Mount the GraphQL endpoint under /api
   apiRouter.use('/graphql', expressMiddleware(server));
 
-  // Mount your existing REST API endpoints under /api
   apiRouter.use('/auth', authRoutes);
   apiRouter.use('/goals', goalRoutes);
 
-  // Mount the entire apiRouter at the /api prefix
   app.use('/api', apiRouter);
-  // ------------------------------------
 
   app.get('/', (req, res) => {
     res.send('<h1>SkillSprint API is running!</h1>');
@@ -43,6 +37,7 @@ async function startServer() {
 
   const PORT = process.env.PORT || 3000;
   app.listen(PORT, async () => {
+    console.log("SERVER RUNNING WITH LATEST ROUTER CONFIGURATION!");
     console.log(`Server is running on port ${PORT}`);
     console.log(`GraphQL endpoint available at http://localhost:${PORT}/api/graphql`);
     try {
