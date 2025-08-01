@@ -7,12 +7,17 @@ const { expressMiddleware } = require('@apollo/server/express4');
 const { sequelize } = require('./api/models');
 const typeDefs = require('./graphql/schema');
 const resolvers = require('./graphql/resolvers');
-
 const authRoutes = require('./api/routes/authRoutes');
 const goalRoutes = require('./api/routes/goalRoutes');
 
 async function startServer() {
   const app = express();
+
+  const corsOptions = {
+    origin: 'https://skill-sprint-gilt.vercel.app', 
+    optionsSuccessStatus: 200
+  };
+  app.use(cors(corsOptions));
 
   const server = new ApolloServer({
     typeDefs,
@@ -20,19 +25,14 @@ async function startServer() {
   });
   await server.start();
 
-  const corsOptions = {
-    origin: 'https://skill-sprint-gilt.vercel.app',
-    optionsSuccessStatus: 200
-  };
-  app.use(cors(corsOptions));
-
   app.use(express.json());
 
-  app.use('/graphql', expressMiddleware(server));
+  
+  app.use('/graphql', cors(corsOptions), express.json(), expressMiddleware(server));
 
   app.use('/api/auth', authRoutes);
   app.use('/api/goals', goalRoutes);
-]
+
   app.get('/', (req, res) => {
     res.send('<h1>SkillSprint API is running!</h1>');
   });
