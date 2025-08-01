@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const { ApolloServer } = require('@apollo/server');
-const { expressMiddleware } = require('@apollo/server/express4');
+const { expressMiddleware } = require('@apollo/server/express4'); 
 
 const { sequelize } = require('./api/models');
 const typeDefs = require('./graphql/schema');
@@ -23,12 +23,9 @@ async function startServer() {
   app.use(express.json());
 
   const apiRouter = express.Router();
-  
   apiRouter.use('/graphql', expressMiddleware(server));
-
   apiRouter.use('/auth', authRoutes);
   apiRouter.use('/goals', goalRoutes);
-
   app.use('/api', apiRouter);
 
   app.get('/', (req, res) => {
@@ -37,7 +34,6 @@ async function startServer() {
 
   const PORT = process.env.PORT || 3000;
   app.listen(PORT, async () => {
-    console.log("SERVER RUNNING WITH LATEST ROUTER CONFIGURATION!");
     console.log(`Server is running on port ${PORT}`);
     console.log(`GraphQL endpoint available at http://localhost:${PORT}/api/graphql`);
     try {
